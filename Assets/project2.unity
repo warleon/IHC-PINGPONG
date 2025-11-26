@@ -2573,28 +2573,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225694070640939218, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225694070640939218, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225694070640939218, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6225694070640939218, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 895879234}
+      objectReference: {fileID: 11500000, guid: 22fa367d27a853a4db699d8b49202adc, type: 3}
     - target: {fileID: 6225694070640939218, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6225694070640939218, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: set_name
       objectReference: {fileID: 0}
     - target: {fileID: 6225694070640939218, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6225694070640939218, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2701,6 +2705,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2241387638278579712, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
       insertIndex: -1
       addedObject: {fileID: 430212939}
+    - targetCorrespondingSourceObject: {fileID: 2241387638278579712, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 430212942}
   m_SourcePrefab: {fileID: 100100000, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
 --- !u!224 &430212936 stripped
 RectTransform:
@@ -2828,6 +2835,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &430212942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318102650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22fa367d27a853a4db699d8b49202adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggle: {fileID: 430212938}
+  sceneName: project2 - alone
 --- !u!1 &433298901
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,11 +3535,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819101401}
   m_Mesh: {fileID: 5178311974266753684, guid: da3852b49eaeced4aba4d29c5814159c, type: 3}
---- !u!1 &895879234 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6345901854121875348, guid: 71d814cc718e6ea45b6a1a719d081f29, type: 3}
-  m_PrefabInstance: {fileID: 342387663}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &903395586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5638,6 +5654,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2241387638278579712, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1966610321}
+    - targetCorrespondingSourceObject: {fileID: 2241387638278579712, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1966610323}
   m_SourcePrefab: {fileID: 100100000, guid: 90ae27b2ef005bc479d956c3d244f591, type: 3}
 --- !u!224 &1966610317 stripped
 RectTransform:
@@ -5765,6 +5784,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggle: {fileID: 1966610319}
   audioSource: {fileID: 1966610320}
+--- !u!114 &1966610323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586268047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22fa367d27a853a4db699d8b49202adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggle: {fileID: 1966610319}
+  sceneName: project2 - multiplayer
 --- !u!1 &1984730877 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6663884219539110884, guid: e6084503f826bbb428b1e677dc1a75d4, type: 3}
