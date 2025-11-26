@@ -1,0 +1,71 @@
+*.apk*
+## Directorios generados por Unity y que no deben ser versionados ##
+/Library/
+/Temp/
+/Obj/
+/Build/
+/Builds/
+/UserSettings/
+/Logs/
+/MemoryCaptures/
+/profiler-reports/
+/Assets/AssetStoreTools/
+/Packages/
+/LocalPackages/
+
+# Archivos de la solución y proyecto de Visual Studio, Rider, etc.
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.sln.DotSettings
+*.user
+*.userprefs
+*.vs/
+*.[a-z0-9]*.csproj
+
+# Archivos generados por Unity que deberían ser ignorados
+*.unitypackage
+*.DS_Store
+*.gz
+*.tar
+*.zip
+.editorconfig
+
+# Archivos de copias de seguridad de Unity (evita archivos duplicados)
+[Bb]ackups/
+
+# Archivos de build y ejecutables (Windows y macOS)
+*.exe
+*.app
+*.apk
+*.xap
+*.aab
+*.ipa
+*.bin
+*.iso
+*.vpk
+*.xap
+*.xci
+*.nsp
+*.pdb
+*.exp
+*.lib
+
+# Archivos específicos de macOS (ignorados por defecto)
+.DS_Store
+.Spotlight-V100
+.Trashes
+Icon
+._*
+
+# Archivos específicos de Windows (ignorados por defecto)
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Archivos del caché de Unity (si no están ya en /Library)
+# Nota: La carpeta /Library/ ya se incluye arriba.
+/Assets/AssetStoreTools/
+
+*_DoNotShip*
