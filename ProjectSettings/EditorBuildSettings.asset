@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/ConcurrentHandsControllersExamples.unity
     guid: 0776e2ecc565518468b85ba8f8ec0565
   - enabled: 1
-    path: Assets/project2.unity
+    path: Assets/Scenes/menu.unity
     guid: fd6338e7a0b1cd8439ab16152adf52c6
   - enabled: 1
-    path: Assets/Scenes/project2 - multiplayer.unity
+    path: Assets/Scenes/multiPlayer.unity
     guid: bca3dae0f7b3efb429914b9640421b45
   - enabled: 1
-    path: Assets/Scenes/project2 - alone.unity
+    path: Assets/Scenes/singlePlayer.unity
     guid: 2de5fa3bf22af534287d83bfbae380b8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 480630b1653699e41af8ae63e06b3ee1, type: 2}
