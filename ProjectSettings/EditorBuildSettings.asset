@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ConcurrentHandsControllersExamples.unity
     guid: 0776e2ecc565518468b85ba8f8ec0565
-  - enabled: 1
+  - enabled: 0
     path: Assets/project2.unity
     guid: fd6338e7a0b1cd8439ab16152adf52c6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/project2 - multiplayer.unity
     guid: bca3dae0f7b3efb429914b9640421b45
   - enabled: 1
