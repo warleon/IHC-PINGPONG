@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/project2.unity
     guid: fd6338e7a0b1cd8439ab16152adf52c6
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/project2 - multiplayer.unity
     guid: bca3dae0f7b3efb429914b9640421b45
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/project2 - alone.unity
     guid: 2de5fa3bf22af534287d83bfbae380b8
   m_configObjects:
