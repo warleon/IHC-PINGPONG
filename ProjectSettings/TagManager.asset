@@ -9,6 +9,29 @@ TagManager:
   - QDSUITextSecondaryColor
   - QDSUIBackplateGradient
   - QDSUISecondaryButton
+  - QDSUISection
+  - QDSUIAccentColor
+  - QDSUIPrimaryButton
+  - QDSUITextSecondaryInvertedColor
+  - QDSUITextInvertedColor
+  - QDSUIDestructiveButton
+  - QDSUISharedThemeColor
+  - QDSUIBorderlessButton
+  - QDSUIToggleBorderlessButton
+  - QDSUITooltip
+  - QDSUIToggleSwitch
+  - PassThroughButton
+  - PassThrough
+  - Locomotion
+  - LocoButton
+  - LocoText
+  - QDSUITextInputField
+  - SamplesInfoPanel
+  - QDSUIToggleCheckboxRadio
+  - FirstPlayer
+  - FirstPlayerFloor
+  - SecondPlayer
+  - SecondPlayerFloor
   layers:
   - Default
   - TransparentFX
