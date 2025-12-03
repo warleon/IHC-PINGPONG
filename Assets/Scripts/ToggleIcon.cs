@@ -6,33 +6,60 @@ public class ToggleIcon : MonoBehaviour
     [Header("References")]
     public Toggle toggle;
     public Image iconImage;
+    public AudioSource musicSource;   // <-- NUEVO
 
     [Header("Sprites")]
-    public Sprite soundOnSprite;
-    public Sprite soundOffSprite;
+    public Sprite soundOnSprite;      // parlante azul
+    public Sprite soundOffSprite;     // parlante rojo (mute)
 
     private void Awake()
     {
-        // Automatically get components if not assigned
+        // Obtener componentes si no están asignados
         if (toggle == null)
             toggle = GetComponent<Toggle>();
         if (iconImage == null)
             iconImage = GetComponent<Image>();
 
-        // Listen for toggle changes
-        toggle.onValueChanged.AddListener(OnToggleChanged);
+        if (musicSource != null)
+            musicSource.loop = true;  // asegurar loop por código
 
-        // Set initial icon
-        OnToggleChanged(toggle.isOn);
+        if (toggle != null)
+        {
+            // Escuchar cambios del toggle
+            toggle.onValueChanged.AddListener(OnToggleChanged);
+
+            // Aplicar estado inicial (incluye icono + música)
+            OnToggleChanged(toggle.isOn);
+        }
     }
 
     private void OnDestroy()
     {
-        toggle.onValueChanged.RemoveListener(OnToggleChanged);
+        if (toggle != null)
+            toggle.onValueChanged.RemoveListener(OnToggleChanged);
     }
 
     private void OnToggleChanged(bool isOn)
     {
-        iconImage.sprite = isOn ? soundOnSprite : soundOffSprite;
+        // Cambiar icono
+        if (iconImage != null)
+            iconImage.sprite = isOn ? soundOnSprite : soundOffSprite;
+
+        // Controlar música
+        if (musicSource == null) return;
+
+        if (isOn)
+        {
+            // SONIDO ACTIVADO
+            if (!musicSource.isPlaying)
+                musicSource.Play();
+            else
+                musicSource.UnPause();
+        }
+        else
+        {
+            // SONIDO MUTEADO
+            musicSource.Pause();
+        }
     }
 }
