@@ -1,11 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PingPongScoreManager : MonoBehaviour
 {
-    public string firstPlayerTableTag = "FirstPlayer";
-    public string secondPlayerTableTag = "SecondPlayer";
-    public string firstPlayerFloorTag = "FirstPlayerFloor";
-    public string secondPlayerFloorTag = "SecondPlayerFloor";
+    [Header("Referencias físicas")]
+    public Collider firstPlayerTable;
+    public Collider secondPlayerTable;
+    public Collider firstPlayerFloor;
+    public Collider secondPlayerFloor;
+
+    [Header("UI Score")]
+    public Text scoreFirstPlayerText;
+    public Text scoreSecondPlayerText;
 
     private enum LastHit
     {
@@ -17,41 +23,40 @@ public class PingPongScoreManager : MonoBehaviour
     private LastHit lastHit = LastHit.None;
     private bool hasHitTableThisRally = false;
 
-    public int scoreFirstPlayer = 0;
-    public int scoreSecondPlayer = 0;
+    private int scoreFirstPlayer = 0;
+    private int scoreSecondPlayer = 0;
 
     private void OnCollisionEnter(Collision collision)
     {
-        string tag = collision.collider.tag;
+        Collider col = collision.collider;
 
-        switch (tag)
+        if (col == firstPlayerTable)
         {
-            case "FirstPlayer":
-                Debug.Log("Tocó mesa FIRST PLAYER");
-                HandleHit(LastHit.FirstPlayer);
-                break;
-
-            case "SecondPlayer":
-                Debug.Log("Tocó mesa SECOND PLAYER");
-                HandleHit(LastHit.SecondPlayer);
-                break;
-
-            case "FirstPlayerFloor":
-                Debug.Log("Tocó piso FIRST PLAYER");
-                HandleFloorHit(LastHit.FirstPlayer);
-                break;
-
-            case "SecondPlayerFloor":
-                Debug.Log("Tocó piso SECOND PLAYER");
-                HandleFloorHit(LastHit.SecondPlayer);
-                break;
+            Debug.Log("Tocó mesa FIRST PLAYER");
+            HandleHit(LastHit.FirstPlayer);
+        }
+        else if (col == secondPlayerTable)
+        {
+            Debug.Log("Tocó mesa SECOND PLAYER");
+            HandleHit(LastHit.SecondPlayer);
+        }
+        else if (col == firstPlayerFloor)
+        {
+            Debug.Log("Tocó piso FIRST PLAYER");
+            HandleFloorHit(LastHit.FirstPlayer);
+        }
+        else if (col == secondPlayerFloor)
+        {
+            Debug.Log("Tocó piso SECOND PLAYER");
+            HandleFloorHit(LastHit.SecondPlayer);
         }
     }
 
     private void HandleHit(LastHit newHit)
     {
-        if (lastHit == newHit) // two consecutive hits
+        if (lastHit == newHit)
         {
+            // Double bounce
             Debug.Log("DOBLE REBOTE en " + newHit);
             AwardPoint(newHit == LastHit.FirstPlayer ? false : true);
             return;
@@ -63,13 +68,15 @@ public class PingPongScoreManager : MonoBehaviour
 
     private void HandleFloorHit(LastHit floorSide)
     {
-        if (!hasHitTableThisRally) // direct floor
+        if (!hasHitTableThisRally)
         {
+            // Direct to floor
             Debug.Log("DIRECTO AL PISO EN " + floorSide);
             AwardPoint(floorSide == LastHit.FirstPlayer);
             return;
         }
 
+        // Hit table then floor
         Debug.Log("LLEGÓ AL PISO DESPUÉS DE MESA: " + floorSide);
         AwardPoint(floorSide == LastHit.FirstPlayer ? false : true);
     }
@@ -79,21 +86,28 @@ public class PingPongScoreManager : MonoBehaviour
         if (pointForFirstPlayer)
         {
             scoreFirstPlayer++;
-            Debug.Log("\nPUNTO PARA FIRST PLAYER — Score: " + scoreFirstPlayer + " - " + scoreSecondPlayer + "\n");
+            Debug.Log($"PUNTO PARA FIRST PLAYER — Score: {scoreFirstPlayer} - {scoreSecondPlayer}");
         }
         else
         {
             scoreSecondPlayer++;
-            Debug.Log("\nPUNTO PARA SECOND PLAYER — Score: " + scoreFirstPlayer + " - " + scoreSecondPlayer + "\n");
+            Debug.Log($"PUNTO PARA SECOND PLAYER — Score: {scoreFirstPlayer} - {scoreSecondPlayer}");
         }
 
+        UpdateUI();
         ResetRally();
+    }
+
+    private void UpdateUI()
+    {
+        if (scoreFirstPlayerText) scoreFirstPlayerText.text = scoreFirstPlayer.ToString();
+        if (scoreSecondPlayerText) scoreSecondPlayerText.text = scoreSecondPlayer.ToString();
     }
 
     private void ResetRally()
     {
         lastHit = LastHit.None;
         hasHitTableThisRally = false;
-        Debug.Log("Rally reiniciado\n");
+        Debug.Log("Rally reiniciado");
     }
 }
