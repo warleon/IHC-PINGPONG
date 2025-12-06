@@ -11,12 +11,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/menu.unity
     guid: fd6338e7a0b1cd8439ab16152adf52c6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/multiPlayer.unity
     guid: bca3dae0f7b3efb429914b9640421b45
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/singlePlayer.unity
     guid: 2de5fa3bf22af534287d83bfbae380b8
+  - enabled: 0
+    path: Assets/Scenes/project2 - multiplayer 1.unity
+    guid: 46c194575cd85284c81fdc52e2c429fd
+  - enabled: 1
+    path: Assets/Scenes/project2multiplayer.unity
+    guid: b92752bc45612c24e9a025797b42b71b
+  - enabled: 1
+    path: Assets/Scenes/project2alone.unity
+    guid: 8496a1039cc84d74b864705322da725f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 480630b1653699e41af8ae63e06b3ee1, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0034078c5d79a604185e72de3c7fa9f8, type: 2}

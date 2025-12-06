@@ -2495,7 +2495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggle: {fileID: 430212943}
-  sceneName: singlePlayer
+  sceneName: project2alone
 --- !u!114 &430212942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2509,7 +2509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggle: {fileID: 430212938}
-  sceneName: singlePlayer
+  sceneName: project2alone
 --- !u!114 &430212943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3011,7 +3011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggle: {fileID: 505635359}
-  sceneName: multiPlayer
+  sceneName: project2multiplayer
 --- !u!114 &505635359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7958,7 +7958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggle: {fileID: 1887086364}
-  sceneName: singlePlayer
+  sceneName: project2multiplayer
 --- !u!114 &1887086366
 MonoBehaviour:
   m_ObjectHideFlags: 0
